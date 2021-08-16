@@ -1,0 +1,7 @@
+
+
+name: main
+entrypoint: main.toit
+triggers:
+    on_install: true
+    on_interval: 10s
