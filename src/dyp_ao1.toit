@@ -4,6 +4,9 @@ import serial
 import gpio
 import serial.ports.uart show Port
 
+/** A library to measure distance using the DYP-A01-V2.0
+*   ultrasonic sensor, available from https://www.adafruit.com/product/4664
+*/
 class DYP_A01:
 
   msg := ""
@@ -26,7 +29,7 @@ class DYP_A01:
   off:
     port.close 
 
-  range -> int:
+  range -> int:                 // Range to target, in mm
       val := range_
       if val < 0: val = range_  // retry 3 times, to resync frames
       if val < 0: val = range_
@@ -34,7 +37,8 @@ class DYP_A01:
       return val
 
   range_ -> int:
-    // Note, a return value of 0 indicates that the target is too close, within the sensor dead zone.
+    // A return value of 0 from the sensor indicates the target is too close,
+    //   within the sensor dead zone.
     frame := port.read
     if not (frame.size==4):  return -1 // wrong frame size
     if not (frame[0]==0xFF): return -2 // wrong start byte

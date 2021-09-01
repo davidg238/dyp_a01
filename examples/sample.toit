@@ -3,9 +3,7 @@
 import pubsub
 import gpio
 
-import .dyp_ao1
-
-topic ::= "cloud:range_tank"
+import dyp_ao1 show DYP_A01
 
 main:
 
@@ -13,8 +11,7 @@ main:
     --tx_pin=22
     --rx_pin=21
 
-  msg := "{\"r\": $(dyp.range)}"
+  msg := "{\"range\": $(dyp.range) mm}"
   print msg
-  pubsub.publish topic msg
 
   dyp.off
