@@ -1,9 +1,6 @@
 // Copyright 2021 Ekorau LLC
 
-import pubsub
-import gpio
-
-import dyp_ao1 show DYP_A01
+import dyp_a01 show DYP_A01
 
 main:
 

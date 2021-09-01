@@ -1,6 +1,7 @@
-# Serial interface to DYP-AO1 ultrasonic sensor
+# Serial interface to DYP-A01 ultrasonic sensor
 
 A simple serial interface to the inexpensive DYP-A01 ultrasonic ranger, available from Adafruit and AliExpress.
+
 The sensor has a nominal 0.28-7.5m range, with a constrained sensing cone.
 The interface implemented here is read-only, at 9600 baud (sensor reads may be triggered by pin3 RX, not implemented).
 
