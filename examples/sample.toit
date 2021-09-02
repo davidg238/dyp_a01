@@ -8,7 +8,7 @@ main:
     --tx_pin=22
     --rx_pin=21
 
-  msg := "{\"range\": $(dyp.range) mm}"
+  msg := "{\"range\": $(dyp.range)}"
   print msg
 
   dyp.off
