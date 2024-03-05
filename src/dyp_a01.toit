@@ -1,14 +1,14 @@
-// Copyright 2021 Ekorau LLC
+// Copyright 2021, 2024 Ekorau LLC
 
 import serial
 import gpio
-import serial.ports.uart show Port
+import uart show Port
 
 /**
 A library to measure distance using the DYP-A01-V2.0
   ultrasonic sensor, available from https://www.adafruit.com/product/4664
 */
-class DYP_A01:
+class DYP-A01:
   hi := 0
   lo := 0
 
@@ -16,13 +16,13 @@ class DYP_A01:
   rx/gpio.Pin
   port/Port
 
-  constructor --tx_pin/int --rx_pin/int:
-    tx = gpio.Pin tx_pin // Not connected.
-    rx = gpio.Pin rx_pin
+  constructor --tx-pin/int --rx-pin/int:
+    tx = gpio.Pin tx-pin // Not connected.
+    rx = gpio.Pin rx-pin
     port = Port
             --tx=tx      // Not used this version.
             --rx=rx
-            --baud_rate=9600
+            --baud-rate=9600
 
   off:
     port.close 
