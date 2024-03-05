@@ -1,3 +1,6 @@
+## 2.0.1 2024-03-05
+Add sample
+
 ## 2.0.0 2024-03-04
 Kebabify code, fix import
 
